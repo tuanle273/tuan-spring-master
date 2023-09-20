@@ -10,7 +10,7 @@ pipeline {
         MYSQL_ROOT_LOGIN = credentials('mysql-root-login')
     }
     stages {
-        stage('Build with maven'){
+        stage('Build with Maven'){
             step{
                 sh 'mvn --version'
                 sh 'javac --version'
