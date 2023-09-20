@@ -2,21 +2,13 @@ pipeline {
 
     agent any
 
-    tools{
-        maven 'my-maven'
-    }
+   
 
     environment {
         MYSQL_ROOT_LOGIN = credentials('mysql-root-login')
     }
     stages {
-        stage('Build with Maven'){
-            step{
-                sh 'mvn --version'
-                sh 'javac --version'
-                sh 'mvn clean package -Dmaven.test.failure.ignore=true'
-            }
-        }
+    
         stage('Packaging/Pushing imagae') {
 
             steps {
